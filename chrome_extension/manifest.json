@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "Browser Fingerprint Overrides",
+  "author": "Intoli, LLC",
+  "version": "1.0.0",
+  "applications": {
+    "gecko": {
+      "id": "fingerprint-overrides@intoli.com"
+    }
+  },
+  "background": {
+    "scripts": ["background-script.js"],
+    "persistent": true
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content-script.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "permissions": [
+    "<all_urls>",
+    "webRequest",
+    "webRequestBlocking"
+    ]
+}
